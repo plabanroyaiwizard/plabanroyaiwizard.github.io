@@ -36,17 +36,11 @@ The workflow reads the Pages URL and sub-path automatically, so it works both fo
 
 All copy lives in [`src/content/profile.ts`](src/content/profile.ts). Lines marked `// CONFIRM:` are inferred or placeholder content.
 
-Public sources used: [about.me/plaban_roy](https://about.me/plaban_roy), [Medium @plabroy](https://medium.com/@plabroy), [GitHub plabanroyaiwizard](https://github.com/plabanroyaiwizard) (certificates repo). The LinkedIn profile could not be fetched.
+Content is based on Plaban's resume (November 2026) plus his public [Medium](https://medium.com/@plabroy) and [GitHub](https://github.com/plabanroyaiwizard). Internal employer system names, site names and security specifics are described generically because the site is public; the phone number is intentionally omitted.
 
 ## Content that needs Plaban's confirmation
 
-- **Headline title**: "Solution Architect, Generative AI" (his Medium byline says "Senior Data Engineer · Architecting AI Systems for Enterprise Analytics").
-- **Domain**: `https://plabanroy.ai` is a placeholder (`site.url`).
-- **Availability badge**: "Open to GenAI architecture roles and advisory work".
-- **Hero stats**: "1M+", "~60%" and "3 industries" are drawn from his articles, not verified project metrics.
-- **Sanofi role**: exact title, start date, and how much of the regulatory document intelligence work can be described publicly.
-- **Earlier experience**: employers, titles and dates before Sanofi are not public; the "Software Engineer, Machine Learning" entry is generic.
-- **Polypharmacy case study**: where it was built and how to describe it.
-- **Certifications**: the listed items are course certificates from his GitHub repo. Add any professional cloud or AI certifications he holds.
-- **Skills**: the GenAI and agentic skills are inferred from his writing.
+- **Availability badge**: "Open to AI solution architecture opportunities".
+- **Document workflow case study**: a shareable outcome metric (for example review time saved or documents processed).
+- **Public disclosure**: that naming Coupa, Oracle, Workday and the scale figures (about 2,000 purchase orders and 5,000+ goods receipts a day, 22 pipelines, ~106 models) is acceptable to share publicly.
 - **Photo**: the site uses "PR" initials; add a headshot if preferred.

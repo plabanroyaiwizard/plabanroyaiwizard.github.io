@@ -1,22 +1,26 @@
 import {
   ArrowRight,
   ArrowUpRight,
-  Award,
+  BadgeCheck,
   Bot,
   Cloud,
   Database,
+  GraduationCap,
   Mail,
   MapPin,
   MessagesSquare,
   PenLine,
   ShieldCheck,
+  Trophy,
   type LucideIcon,
 } from "lucide-react";
 import {
   about,
+  awards,
   caseStudies,
   certifications,
   contact,
+  education,
   experience,
   expertise,
   hero,
@@ -112,7 +116,7 @@ export function Hero() {
           </a>
         </div>
 
-        <dl className="mt-16 grid max-w-3xl grid-cols-1 gap-6 border-t border-border/60 pt-8 sm:grid-cols-3">
+        <dl className="mt-16 grid max-w-4xl grid-cols-2 gap-6 border-t border-border/60 pt-8 sm:grid-cols-4">
           {hero.stats.map((stat) => (
             <div key={stat.label}>
               <dt className="text-sm text-muted-foreground">{stat.label}</dt>
@@ -250,7 +254,7 @@ export function Solutions() {
 
 export function Experience() {
   return (
-    <Section id="experience" eyebrow="Experience" title="From ML engineering to GenAI architecture." className="bg-muted/30">
+    <Section id="experience" eyebrow="Experience" title="From healthcare software to enterprise AI architecture." className="bg-muted/30">
       <div className="grid gap-12 lg:grid-cols-[1.5fr_1fr]">
         <ol className="relative space-y-10 border-l border-border pl-8">
           {experience.map((item) => (
@@ -301,7 +305,7 @@ export function Experience() {
 
 export function Skills() {
   return (
-    <Section id="skills" eyebrow="Certifications & skills" title="The toolkit behind the architecture.">
+    <Section id="skills" eyebrow="Skills, certification & education" title="The toolkit behind the architecture.">
       <div className="grid gap-10 lg:grid-cols-2">
         <div className="grid gap-6 sm:grid-cols-2">
           {skills.map((group) => (
@@ -317,19 +321,43 @@ export function Skills() {
             </div>
           ))}
         </div>
-        <div>
-          <h3 className="text-sm font-semibold">Certifications & coursework</h3>
-          <ul className="mt-3 grid gap-3 sm:grid-cols-2">
-            {certifications.map((cert) => (
-              <li key={cert.name} className="flex gap-3 rounded-xl border bg-card p-4">
-                <Award className="mt-0.5 size-5 shrink-0 text-primary" />
-                <div>
-                  <p className="text-sm font-medium leading-snug">{cert.name}</p>
-                  <p className="mt-0.5 text-xs text-muted-foreground">{cert.issuer}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
+        <div className="space-y-8">
+          <div>
+            <h3 className="text-sm font-semibold">Certification & recognition</h3>
+            <ul className="mt-3 grid gap-3 sm:grid-cols-2">
+              {[...certifications, ...awards].map((item, i) => {
+                const Icon = i < certifications.length ? BadgeCheck : Trophy;
+                return (
+                  <li key={item.name} className="flex gap-3 rounded-xl border bg-card p-4">
+                    <Icon className="mt-0.5 size-5 shrink-0 text-primary" />
+                    <div>
+                      <p className="text-sm font-medium leading-snug">{item.name}</p>
+                      <p className="mt-0.5 text-xs text-muted-foreground">
+                        {item.issuer} · {item.date}
+                      </p>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-sm font-semibold">Education</h3>
+            <ul className="mt-3 space-y-3">
+              {education.map((item) => (
+                <li key={item.credential} className="flex gap-3 rounded-xl border bg-card p-4">
+                  <GraduationCap className="mt-0.5 size-5 shrink-0 text-primary" />
+                  <div className="flex-1">
+                    <div className="flex flex-wrap items-baseline justify-between gap-x-3">
+                      <p className="text-sm font-medium leading-snug">{item.credential}</p>
+                      <p className="font-mono text-xs text-muted-foreground">{item.period}</p>
+                    </div>
+                    <p className="mt-0.5 text-xs text-muted-foreground">{item.school}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </Section>
