@@ -19,9 +19,9 @@ import {
   caseStudies,
   certifications,
   contact,
-  experience,
   expertise,
   hero,
+  journey,
   person,
   skills,
   writing,
@@ -30,6 +30,7 @@ import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { GitHubIcon, LinkedInIcon } from "@/components/brand-icons";
+import { Journey } from "@/components/journey";
 import { cn } from "@/lib/utils";
 
 const expertiseIcons: Record<string, LucideIcon> = {
@@ -252,50 +253,33 @@ export function Solutions() {
 
 export function Experience() {
   return (
-    <Section id="experience" eyebrow="Experience" title="From healthcare software to enterprise AI architecture." className="bg-muted/30">
-      <div className="grid gap-12 lg:grid-cols-[1.5fr_1fr]">
-        <ol className="relative space-y-10 border-l border-border pl-8">
-          {experience.map((item) => (
-            <li key={item.org} className="relative">
-              <span className="absolute -left-[39px] top-1 size-3.5 rounded-full border-2 border-primary bg-background" />
-              <p className="font-mono text-xs uppercase tracking-wider text-muted-foreground">{item.period}</p>
-              <h3 className="mt-1 text-lg font-semibold">{item.role}</h3>
-              <p className="text-sm text-primary">
-                {item.org}
-                {item.location && <span className="text-muted-foreground"> · {item.location}</span>}
-              </p>
-              <p className="mt-2 text-muted-foreground">{item.summary}</p>
-              <ul className="mt-3 space-y-1.5 text-sm">
-                {item.highlights.map((h) => (
-                  <li key={h} className="flex gap-2">
-                    <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary/70" />
-                    {h}
-                  </li>
-                ))}
-              </ul>
+    <Section
+      id="experience"
+      eyebrow="The journey"
+      title="Five chapters, one thread: data trustworthy enough to act on."
+      intro="Not a job list. Each chapter is the problem I was solving, what it taught me, and the proof. Pick a chapter."
+      className="bg-muted/30"
+    >
+      <Journey chapters={journey} />
+
+      <div className="mt-16">
+        <h3 className="flex items-center gap-2 font-semibold">
+          <PenLine className="size-4 text-primary" /> Recent writing
+        </h3>
+        <ul className="mt-4 grid gap-3 md:grid-cols-3">
+          {writing.map((post) => (
+            <li key={post.title}>
+              <a
+                href={post.href}
+                {...external}
+                className="group block h-full rounded-xl border bg-card p-4 transition-colors hover:border-primary/50"
+              >
+                <p className="text-xs text-muted-foreground">{post.date} · Medium</p>
+                <p className="mt-1 font-medium leading-snug group-hover:text-primary">{post.title}</p>
+              </a>
             </li>
           ))}
-        </ol>
-
-        <div>
-          <h3 className="flex items-center gap-2 font-semibold">
-            <PenLine className="size-4 text-primary" /> Recent writing
-          </h3>
-          <ul className="mt-4 space-y-3">
-            {writing.map((post) => (
-              <li key={post.title}>
-                <a
-                  href={post.href}
-                  {...external}
-                  className="group block rounded-xl border bg-card p-4 transition-colors hover:border-primary/50"
-                >
-                  <p className="text-xs text-muted-foreground">{post.date} · Medium</p>
-                  <p className="mt-1 font-medium leading-snug group-hover:text-primary">{post.title}</p>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
+        </ul>
       </div>
     </Section>
   );

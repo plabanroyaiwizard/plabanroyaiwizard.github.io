@@ -215,63 +215,93 @@ export const caseStudies: CaseStudy[] = [
   },
 ];
 
-export type TimelineItem = {
+export type JourneyChapter = {
+  id: string;
   period: string;
-  role: string;
+  theme: string;
   org: string;
-  location?: string;
-  summary: string;
-  highlights: string[];
+  role: string;
+  story: string;
+  lesson: string;
+  proof: { value: string; label: string }[];
+  tools: string[];
 };
 
-export const experience: TimelineItem[] = [
+export const journey: JourneyChapter[] = [
   {
-    period: "Jul 2026 – Present",
-    role: "Senior Data and AI Engineer · AI Workflow Team",
-    org: "Sanofi Aventis Inc.",
-    location: "Toronto, ON",
-    summary: "Solution design for the data platform behind an enterprise procurement workflow product.",
-    highlights: [
-      "Designed and shipped Coupa ingestion on Airflow (Amazon MWAA) into Snowflake, live since October 2026",
-      "Designed and shipped the Oracle approval pipeline with its own DAG, delta table and end-to-end verifier",
-      "Integrations across Coupa, Workday, Oracle, Snowflake and dbt",
-    ],
-  },
-  {
-    period: "Nov 2022 – Jul 2026",
-    role: "Senior Data Engineer · ML Solution Engineering",
-    org: "Sanofi Vaccines Inc.",
-    location: "Toronto, ON",
-    summary: "Major contributor to AI document workflows and manufacturing analytics.",
-    highlights: [
-      "Hybrid NL-to-SQL plus agentic RAG document workflow on LangGraph, Pinecone and Cortex Analyst",
-      "Hardened the platform with customer-managed KMS encryption and key-pair Snowflake auth",
-      "Daily ELT across 22 manufacturing pipelines; Sanofi Data Hero award, May 2023",
-    ],
-  },
-  {
-    period: "Jan 2022 – Sep 2022",
-    role: "Data Analytics Associate (Lead Developer) and Co-op",
-    org: "Scotiabank",
-    location: "Toronto, ON",
-    summary: "Machine learning and analytics for financial security and finance operations.",
-    highlights: [
-      "BigQuery ML anomaly-detection application on Google Cloud to strengthen financial security",
-      "NLP expense classifier improved from 60% to 85%+ accuracy, automated with a daily Python ETL",
-      "Invoice payment forecasting and executive stories in Oracle Analytics Server",
-    ],
-  },
-  {
-    period: "Sep 2015 – Apr 2020",
+    id: "interop",
+    period: "2015 – 2020",
+    theme: "Making health data talk",
+    org: "Aptsource Software · Kolkata",
     role: "Software Engineer (Data)",
-    org: "Aptsource Software",
-    location: "Kolkata, India",
-    summary: "Healthcare software and interoperability for U.S. providers.",
-    highlights: [
-      "Designed the API and data model for doctor search and appointment booking (Python/Flask)",
-      "HL7/CCDA document exchange, schema mapping and HEDIS logic in Python and SQL",
-      "EHR immunization features integrated with U.S. state registries, built test-first",
+    story:
+      "I started in the plumbing of U.S. healthcare: HL7 and CCDA document exchange, HEDIS quality logic, EHR immunization features wired into state registries, and the API and data model behind doctor search and appointment booking.",
+    lesson: "Interoperability is the real product. A model is only as useful as the data contracts that feed it.",
+    proof: [
+      { value: "5 yrs", label: "building U.S. healthcare software" },
+      { value: "HL7 · CCDA", label: "interoperability standards shipped" },
     ],
+    tools: ["Python", "Flask", "SQL", "HL7", "TDD"],
+  },
+  {
+    id: "first-ml",
+    period: "2022",
+    theme: "Models meet money",
+    org: "Scotiabank · Toronto",
+    role: "Data Analytics Associate (Lead Developer) and Co-op",
+    story:
+      "My first production machine learning: a BigQuery ML anomaly-detection application for financial security, an NLP classifier for employee expense claims, and payment forecasting that finance leaders actually used.",
+    lesson: "Accuracy is a number; adoption is the outcome. Automate the pipeline, or the model dies in a notebook.",
+    proof: [
+      { value: "60% → 85%+", label: "expense classifier accuracy" },
+      { value: "Daily", label: "automated ETL into stakeholder dashboards" },
+    ],
+    tools: ["BigQuery ML", "GCP", "NLP", "scikit-learn", "Oracle Analytics"],
+  },
+  {
+    id: "manufacturing",
+    period: "2022 – 2026",
+    theme: "Data a vaccine plant can trust",
+    org: "Sanofi Vaccines · Toronto",
+    role: "Senior Data Engineer, ML Solution Engineering",
+    story:
+      "I helped land batch, genealogy and process-parameter data from manufacturing sites worldwide into one daily platform, including genealogy logic that traces every output back to its inputs.",
+    lesson: "In regulated industries, lineage is a feature. If you cannot trace a number, nobody can act on it.",
+    proof: [
+      { value: "22", label: "site and product pipelines, every day" },
+      { value: "Data Hero", label: "Sanofi award, May 2023" },
+    ],
+    tools: ["Argo Workflows", "Snowflake", "SQL", "Power BI"],
+  },
+  {
+    id: "agents",
+    period: "2022 – 2026",
+    theme: "Agents for quality documents",
+    org: "Sanofi Vaccines · Toronto",
+    role: "Senior Data Engineer, ML Solution Engineering",
+    story:
+      "I was a major contributor to an AI document workflow for qualification, manufacturing-science and product-quality reports: NL-to-SQL for structured questions, a LangGraph agent with vector search for documents, behind a FastAPI service.",
+    lesson: "Agents are services with judgment. Give them the same boundaries, encryption and observability as any other service.",
+    proof: [
+      { value: "2-path", label: "hybrid retrieval: SQL plus agentic RAG" },
+      { value: "0", label: "key files on disk after the auth rework" },
+    ],
+    tools: ["LangGraph", "Cortex Analyst", "Pinecone", "FastAPI", "AWS KMS"],
+  },
+  {
+    id: "workflow",
+    period: "2026 → now",
+    theme: "Architecting the workflow layer",
+    org: "Sanofi Aventis · Toronto",
+    role: "Senior Data and AI Engineer, AI Workflow Team",
+    story:
+      "I now own solution designs for the data platform behind an enterprise procurement workflow product. I designed and shipped the Coupa ingestion and the Oracle approval pipeline, from volume sizing to production guards.",
+    lesson: "Sizing is a design decision. Know your volumes, rate limits and blast radius before you choose the architecture.",
+    proof: [
+      { value: "7,000+", label: "purchase orders and receipts a day" },
+      { value: "~106", label: "models shielded from upstream failures" },
+    ],
+    tools: ["Airflow on MWAA", "Snowflake", "dbt", "Coupa", "Oracle"],
   },
 ];
 

@@ -12,7 +12,7 @@ const nav = [
   { href: "#about", label: "About" },
   { href: "#expertise", label: "Expertise" },
   { href: "#solutions", label: "Solutions" },
-  { href: "#experience", label: "Experience" },
+  { href: "#experience", label: "Journey" },
   { href: "#skills", label: "Skills" },
 ];
 
