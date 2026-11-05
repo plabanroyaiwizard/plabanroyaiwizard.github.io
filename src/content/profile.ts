@@ -33,8 +33,7 @@ export const person = {
   // CONFIRM: headline title. Medium byline says "Senior Data Engineer · Architecting AI Systems for Enterprise Analytics".
   role: "Solution Architect, Generative AI",
   location: "Toronto, Canada",
-  // CONFIRM: real contact email
-  email: "hello@plabanroy.ai",
+  email: "plaban1407@gmail.com",
   availability: "Open to GenAI architecture roles and advisory work",
   links: {
     linkedin: "https://www.linkedin.com/in/plabanroyai/",

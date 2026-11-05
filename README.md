@@ -31,7 +31,6 @@ Public sources used: [about.me/plaban_roy](https://about.me/plaban_roy), [Medium
 ## Content that needs Plaban's confirmation
 
 - **Headline title**: "Solution Architect, Generative AI" (his Medium byline says "Senior Data Engineer · Architecting AI Systems for Enterprise Analytics").
-- **Email**: `hello@plabanroy.ai` is a placeholder.
 - **Domain**: `https://plabanroy.ai` is a placeholder (`site.url`).
 - **Availability badge**: "Open to GenAI architecture roles and advisory work".
 - **Hero stats**: "1M+", "~60%" and "3 industries" are drawn from his articles, not verified project metrics.
