@@ -13,14 +13,24 @@ npm install
 npm run dev      # http://localhost:43127
 ```
 
-Production build:
+Production build (static export to `out/`):
 
 ```bash
 npm run build
-npm start        # http://localhost:43127
+npm start        # serves out/ at http://localhost:43127
 ```
 
 Set `NEXT_PUBLIC_SITE_URL` to the production domain so canonical URLs, the sitemap and Open Graph tags point to the right place.
+
+## Deploy to GitHub Pages
+
+The site builds as a fully static export, and `.github/workflows/deploy-pages.yml` publishes it on every push to `main`.
+
+1. Push this project to a GitHub repository and merge it into `main`.
+2. In the repository, open **Settings → Pages** and set **Source** to **GitHub Actions**.
+3. Push to `main` (or run the workflow manually from the **Actions** tab).
+
+The workflow reads the Pages URL and sub-path automatically, so it works both for a project site (`https://<user>.github.io/<repo>/`) and for a user site repository named `<user>.github.io`. To use a custom domain, add it under **Settings → Pages**.
 
 ## Editing content
 
