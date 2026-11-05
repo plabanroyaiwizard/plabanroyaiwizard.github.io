@@ -284,24 +284,6 @@ export const awards = [
   { name: "Dean's Honor List", issuer: "Lambton College", date: "2022" },
 ];
 
-export const education = [
-  {
-    credential: "Graduate Certificate, Artificial Intelligence & Machine Learning",
-    school: "Lambton College, Toronto",
-    period: "2020 – 2022",
-  },
-  {
-    credential: "Master of Computer Applications (MCA)",
-    school: "Birla Institute of Technology, Mesra · WES: Canadian Master's equivalent",
-    period: "2012 – 2015",
-  },
-  {
-    credential: "Bachelor of Computer Applications (BCA)",
-    school: "Birla Institute of Technology, Mesra · WES: Canadian Bachelor's equivalent",
-    period: "2009 – 2012",
-  },
-];
-
 export const skills: { group: string; items: string[] }[] = [
   {
     group: "Solution architecture",

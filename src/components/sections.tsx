@@ -5,7 +5,6 @@ import {
   Bot,
   Cloud,
   Database,
-  GraduationCap,
   Mail,
   MapPin,
   MessagesSquare,
@@ -20,7 +19,6 @@ import {
   caseStudies,
   certifications,
   contact,
-  education,
   experience,
   expertise,
   hero,
@@ -305,7 +303,7 @@ export function Experience() {
 
 export function Skills() {
   return (
-    <Section id="skills" eyebrow="Skills, certification & education" title="The toolkit behind the architecture.">
+    <Section id="skills" eyebrow="Skills & certification" title="The toolkit behind the architecture.">
       <div className="grid gap-10 lg:grid-cols-2">
         <div className="grid gap-6 sm:grid-cols-2">
           {skills.map((group) => (
@@ -339,23 +337,6 @@ export function Skills() {
                   </li>
                 );
               })}
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-sm font-semibold">Education</h3>
-            <ul className="mt-3 space-y-3">
-              {education.map((item) => (
-                <li key={item.credential} className="flex gap-3 rounded-xl border bg-card p-4">
-                  <GraduationCap className="mt-0.5 size-5 shrink-0 text-primary" />
-                  <div className="flex-1">
-                    <div className="flex flex-wrap items-baseline justify-between gap-x-3">
-                      <p className="text-sm font-medium leading-snug">{item.credential}</p>
-                      <p className="font-mono text-xs text-muted-foreground">{item.period}</p>
-                    </div>
-                    <p className="mt-0.5 text-xs text-muted-foreground">{item.school}</p>
-                  </div>
-                </li>
-              ))}
             </ul>
           </div>
         </div>

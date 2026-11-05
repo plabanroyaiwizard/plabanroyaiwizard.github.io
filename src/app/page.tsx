@@ -11,10 +11,6 @@ const jsonLd = {
   email: `mailto:${person.email}`,
   address: { "@type": "PostalAddress", addressLocality: "Toronto", addressCountry: "CA" },
   worksFor: { "@type": "Organization", name: "Sanofi" },
-  alumniOf: [
-    { "@type": "CollegeOrUniversity", name: "Lambton College" },
-    { "@type": "CollegeOrUniversity", name: "Birla Institute of Technology, Mesra" },
-  ],
   sameAs: Object.values(person.links),
   knowsAbout: ["Generative AI", "Agentic AI", "LangGraph", "Retrieval-augmented generation", "Snowflake", "Apache Airflow", "Data architecture"],
 };
