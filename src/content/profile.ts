@@ -63,7 +63,7 @@ export const about = {
   title: "Data engineer by trade, architect by necessity, builder by instinct.",
   paragraphs: [
     "At Sanofi I turn messy pharmaceutical documents (regulatory submissions, clinical trial reports, quality records) into structured, searchable intelligence using LLMs and vector databases. The hard part is rarely the model. It is the retrieval, the data contracts, the security boundaries and the evaluation loop around it.",
-    "Before pharma I founded OmCare.AI, a Toronto health-tech venture working on personal health-data ownership. That experience shaped how I design: start from the user's real workflow, keep the architecture boring where it can be, and be deliberate about where the intelligence sits.",
+    "I am drawn to problems at the intersection of AI and healthcare, especially preventive health. That shapes how I design: start from the user's real workflow, keep the architecture boring where it can be, and be deliberate about where the intelligence sits.",
     "I write about production GenAI architecture on Medium, from session layers for stateless NL-to-SQL APIs to six-layer RAG systems that scale to a million PDFs.",
   ],
   principles: [
@@ -204,7 +204,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     title: "Polypharmacy cascade detection",
-    // CONFIRM: whether this was built under OmCare.AI and how it should be described
+    // CONFIRM: where this was built and how it should be described
     context: "Health tech · Medication safety",
     problem:
       "Drug interaction checkers evaluate medications in pairs, missing risks that only emerge across three or more drugs.",
@@ -245,20 +245,7 @@ export const experience: TimelineItem[] = [
     ],
   },
   {
-    // CONFIRM: title and end date. Corporation registered 2024-07-16.
-    period: "2024",
-    role: "Founder & Director",
-    org: "OmCare AI Inc.",
-    location: "Toronto, Canada",
-    summary:
-      "Health-tech venture focused on personal health-data ownership and AI for preventive health.",
-    highlights: [
-      "Shaped product and architecture for a consumer health-data platform",
-      "Explored AI for longevity, preventive care and medication safety",
-    ],
-  },
-  {
-    // CONFIRM: employer(s), titles and dates before OmCare.AI
+    // CONFIRM: employer(s), titles and dates before Sanofi
     period: "Earlier",
     role: "Software Engineer, Machine Learning",
     org: "Data science and ML engineering roles",
